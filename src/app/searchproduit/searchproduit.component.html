@@ -1,0 +1,17 @@
+<h2 style="color: white;background-color: rgb(124, 180, 233);">les resultats de votre recherche:</h2>
+<div class="container">
+        <div class="col-xs-12">
+                <div class="row">
+                        <div *ngFor="let produit of produits" class="card col-xs-4 espace">
+                        
+                                <a [routerLink]="['/listproduits/chercherparnom',produit.idproduit]"><img  [src]="produit.locationprod" height="300px" width="250px"></a>
+                                <h1>{{produit.decriptionProd}}</h1>
+                                <p class="price">MAD{{produit.prix}}</p>
+                                <p><button>Ajouter au panier</button></p>
+                        </div>
+                </div>
+        </div>
+                
+</div>
+
+

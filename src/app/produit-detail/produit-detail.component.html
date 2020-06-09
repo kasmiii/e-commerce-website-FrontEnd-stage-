@@ -1,0 +1,24 @@
+<div class="col-xs-12">
+<div class="row">
+        <div class="col-xs-4">
+        </div>
+               <div class="card text-white bg-primary mb-3" style="max-width: 100rem;">
+                        <div class="card-body">
+                                
+                        <h5 class="card-title">
+                                <div class="p-3 mb-2 text-white">les details du produit choisi:</div>
+                        </h5>
+                        <div class="card-img">
+                                <img class="img" [src]="produit[0].locationprod">
+                        </div>
+                        
+                                <p class="text-black-50 card-text">{{produit[0].descriptionProd}}</p><br/>
+                                <h1 class="text-black-50">MAD{{produit[0].prix}}</h1><br/>
+                                <h1 class="prix">Marque:{{produit[0].marque}}</h1><br/>
+                                <h1 class="prix">Categorie:{{produit[0].categorie}}</h1><br/>
+ 
+                        </div>
+                </div>        
+       <a [routerLink]="[ '/ajouteraupanier',idUser,produit[0].idproduit ]"><button class="btn btn-danger">Ajouter au panier</button></a>
+</div>
+</div>

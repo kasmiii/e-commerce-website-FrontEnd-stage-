@@ -1,0 +1,42 @@
+<div class="page-container">
+    <div class="container">
+        <div class="form-style-10" >
+            <h1>Sign Up Now!<span>veuillez remplir la formulaire pour vous enregistrer !</span></h1>
+            <form (ngSubmit)="onCreate(signupForm.value)" #signupForm="ngForm">
+                <div class="section"><span>1</span>First Name & Address</div>
+                <div class="inner-wrap">
+                    <label for="name">Your Full Name <input type="text" id="name" required [(ngModel)]="nametext" name="name" #name="ngModel"/></label>
+                    <div [hidden]="!name.invalid" class="alert alert-danger">le nom est obligatoire</div>
+                    <label for="adresse">Address <textarea id="adresse" required [(ngModel)]="adressetext" name="adresse" #adresse="ngModel"></textarea></label>
+                </div>
+                <div class="section"><span>2</span>Email & telephone</div>
+                <div class="inner-wrap">
+                    <label for="email">Email Address <input type="email" id="email" name="email"  required [(ngModel)]="emailtext" #email="ngModel"/></label>
+                    <label for="phone">Phone Number <input type="text" id="phone" name="phone" required [(ngModel)]="phonetext" #phone="ngModel"/></label>
+                </div>
+            
+                <div class="section"><span>3</span>Username and Passwords</div>
+                    <div class="inner-wrap">
+                    <label for="username">Username <input type="text"id="username"   ngModel required [(ngModel)]="usernametext" name="username" #username="ngModel" /></label>
+                   <div [hidden]="username.invalid" class="alert alert-danger"></div>
+                    <label for="password">Password <input type="password" id="password" name="password" required [(ngModel)]="passwordtext" name="password" #password="ngModel" /></label>
+                    <label for="passwordconfirmed">Confirm Password <input type="password" id="passwordconfirmed" required [(ngModel)]="passwordconfirmedtext" name="passwordconfirmed" #passwordconfirmed="ngModel"/></label>
+                    <div [hidden]="password.valid && passwordconfirmed.valid && password.value==passwordconfirmed.value" class="alert alert-danger">le mot de passe doit etre le meme !</div>
+                </div>
+               
+                <div class="button-section">
+                    <button class="btn btn-primary" [disabled]="!signupForm.form.valid">SingIn</button>
+                    <span class="privacy-policy">
+                    <input type="checkbox" name="terms">You agree to our Terms and Policy. 
+                    </span>
+                   </div>
+               </form>
+               
+       </div>
+       </div>
+       </div>
+       
+       
+       
+    
+    

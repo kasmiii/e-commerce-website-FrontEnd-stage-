@@ -1,0 +1,21 @@
+<div class="page-container">
+    <div class="container">
+        <div class="form-style-10" >
+            <h1>Sign In<span>Veuillez entrer votre username et mot de passe pour vous connecter !</span></h1>
+            <form (ngSubmit)="onSignIn(signinForm.value)" #signinForm="ngForm">
+                <div class="section"><span>1</span>Username</div>
+                <div class="inner-wrap">
+                    <label for="username">Username: <input type="text" id="username" required [(ngModel)]="usernametext" name="username" #username="ngModel"/></label>
+                    <div [hidden]="!username.invalid" class="alert alert-danger">l'identifiant est obligatoire !</div>
+                    <label for="password">Password: <input type="password" id="password" required [(ngModel)]="passwordtext" name="password" #password="ngModel"/></label>
+                    <div class="alert alert-danger" [hidden]="!password.invalid">le mot de passe est obligatoire</div>
+                </div>
+               
+                <div class="button-section">
+                    <button class="btn btn-primary" [disabled]="!signinForm.form.valid">Se connecter</button>
+                </div>
+            </form>
+               
+       </div>
+       </div>
+       </div>

@@ -1,0 +1,58 @@
+
+<form class="form-control" (ngSubmit)="onSearch(chercher.value)" #chercher="ngForm">       
+    <div class="row">
+        <div class="container">
+                <label for="produit_recherche" class="sr-only">rechercher...</label>
+                
+                    <input  type="text" class="form-control-plaintext form-control" id="produit_recherche" name="produit_recherche" [(ngModel)]="pproduit_recherche" #produit_recherche="ngModel" placeholder="cherchez par nom du produit...">
+                    <button class="btn btn-primary">chercher</button>
+              
+                
+            </div>
+    </div>  
+          
+    <!--
+        <p>category:</p>
+    <select id="categorie"  [(ngModel)]="categoriechoisie" name="categorie" #categorie="ngModel">
+            <option value="">--choisir une categorie</option>
+        <option *ngFor="let categorie of categories" [value]="categorie" >
+            {{categorie}}
+        </option>
+    </select>
+
+    <p>marque:</p>
+    <select id="marque" name="marque" [(ngModel)]="marquechoisie" #marque="ngModel">
+        <option value="">--choisir une marque</option>
+        <option *ngFor="let marque of marques" [value]="marque" name="marque">{{marque}}</option>
+    </select>
+    -->    
+</form>
+<!--carousel palyer -->
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+          <img src="./assets/img/img2.jpg" class="d-block w-100" alt="produits electroniques" style="width: 400px;height: 300px;">
+      </div>
+      <div class="carousel-item">
+        <img src="./assets/img/img1.jpg" class="d-block w-100" alt="produits electroniques" style="width: 400px;height: 300px;">
+      </div>
+      <div class="carousel-item">
+        <img src="./assets/img/img3.jpg" class="d-block w-100" alt="produits electroniques" style="width: 400px;height: 300px;">
+      </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="col-xs-12">
+      <div class="row">
+          <div *ngFor="let produit of produits" class="card col-xs-4 espace">
+              <a [routerLink]="['/listproduits',produit.idproduit]"><img  [src]="produit.locationprod" height="300px" width="250px"></a>
+              <h1>{{produit.decriptionProd}}</h1>
+              <p class="price">MAD{{produit.prix}}</p>
+              <p><button>Ajouter au panier</button></p>
+          </div>
+      </div>
+           
+    </div>
+</div>

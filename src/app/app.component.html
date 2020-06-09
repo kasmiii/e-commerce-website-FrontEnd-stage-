@@ -1,0 +1,89 @@
+<ul class="nav nav-pills">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">E-Commerce Website</a>
+  </li>
+  <li class="nav-item active">
+    <a class="nav-link" routerLink="listproduits">Tous les produits</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="#">Espace Vendeur</a>
+  </li>
+  <li class="nav-item">
+<a class="nav-link" routerLink="#">About</a>
+  </li>
+  <li class="active">
+  <a [routerLink]="['card',idUser]"><img src="assets/img/icon_commerce.ico" style='font-size:32px;color:red'><span class="badge badge-secondary badge-pill" style="background-color:red;color:white">{{nbre_commandes}}</span></a>
+  </li>
+    <!--
+<li class="nav-item dropdown justify-content-end">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Compte</a>
+
+    <div class="dropdown-menu">
+        <a class="active" routerLink="logout" data-toggle="pill" >Logout<img src="assets/img/logout.ico" style='height:20px;width: 32px'></a>
+        <a class="active" routerLink="signin" data-toggle="pill" *ngIf="name===''"><button class="btn btn-primary" >SignIn</button></a>
+        <a class="active" routerLink="signup" data-toggle="pill" *ngIf="name===''"><button class="btn btn-success">SignUp</button></a>
+    </div>
+  </li>"node_modules/popper.js/dist/popper.min.js"
+    --> 
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Dropdown</a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Link 1</a>
+        <a class="dropdown-item" href="#">Link 2</a>
+        <a class="dropdown-item" href="#">Link 3</a>
+      </div>
+    </li>
+  
+</ul>
+
+<!--<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+      </button>
+      <a class="navbar-brand" href="#">Site E-Commerce</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+          <li><a routerLink="listproduits">Home</a></li>
+          <li class="active"><a routerLink="listproduits">espace Vendeur</a></li>
+          <li class="active"><a routerLink="#">About</a></li>
+          
+          <li _ngcontent-yra-c4="" class="dropdown">
+          <a _ngcontent-yra-c4="" aria-expanded="false" aria-haspopup="true" class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">
+            Contact Us 
+            <span _ngcontent-yra-c4="" class="caret"></span>
+          </a>
+          </li>
+          <ul class="nav navbar-nav">
+              <li><a routerLink="signin" *ngIf="name===''"><button class="btn btn-primary" >signIn</button></a></li>
+              <li><a routerLink="signup" *ngIf="name===''"><button class="btn btn-success">signUp</button></a>
+              </li>
+          </ul>
+          <a [routerLink]="[ 'card',idUser]"><img src="assets/img/icon_commerce.ico" style='font-size:32px;color:red'><span style="color:red">{{nbre_commandes}}</span></a>
+          
+              <a [routerLink]="[ '/logout' ]">Logout<img src="assets/img/logout.ico" style='height:20px;width: 32px'></a>
+                  
+          </ul>
+    </div>
+  </div>
+</nav>
+-->
+<p *ngIf="name!==''" style="color:white;background-color: rgb(71, 138, 214);">Bonjour {{login}} dans votre espace !vous etes connecte</p>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+          <router-outlet></router-outlet>
+          <footer class="my-5 pt-5 text-muted text-center text-small">
+              <p class="mb-1">© 2017-2019 E-commerce</p>
+              <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Privacy</a></li>
+                <li class="list-inline-item"><a href="#">Terms</a></li>
+                <li class="list-inline-item"><a href="#">Support</a></li>
+              </ul>
+            </footer>
+      </div>
+    </div>
+  </div>
+  
